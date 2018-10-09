@@ -1,0 +1,17 @@
+package com.revature.bean;
+
+import org.hibernate.Session;
+
+import com.revature.bean.utility.HibernateUtilities;
+
+public class Program {
+
+	public static void main(String[] args) {
+		 System.out.println("Driver......");
+		Session session = HibernateUtilities.getSessionFactory()
+		System.out.println("it works");
+		session.close();
+		
+	}
+
+}

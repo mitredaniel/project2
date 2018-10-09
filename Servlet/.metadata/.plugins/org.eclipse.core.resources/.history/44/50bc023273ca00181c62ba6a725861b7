@@ -1,0 +1,6 @@
+package com.revature.bean.utility;
+
+public class HibernateUtilities {
+	
+
+}

@@ -1,0 +1,32 @@
+package com.revature.bean.utility;
+
+import org.hibernate.HibernateException;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.Metadata;
+import org.hibernate.boot.MetadataSources;
+import org.hibernate.boot.registry.StandardServiceRegistry;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+public class HibernateUtilities {
+	private static SessionFactory sessionFactory;
+	//private static StandardServiceRegistry serviceRegistry;
+	
+	static 
+	{
+		try {
+			StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().configure("hibernate.cfg.xml").build();
+			Metadata metaData = new MetadataSources(standardRegistry).getMetadataBuilder().build();
+			sessionFactory = metaData.getSessionFactoryBuilder().build();	
+			
+			} catch (HibernateException exception) {
+				System.out.println(exception.getStackTrace());
+			}
+		
+	}
+	
+	public static SessionFactory getSessionFactory() {
+		return sessionFactory;
+		
+	}
+
+}
