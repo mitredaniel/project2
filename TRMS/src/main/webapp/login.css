@@ -1,0 +1,34 @@
+@charset "ISO-8859-1";
+body{
+    padding: 50px;
+}
+.modal-dialog {
+    width: 300px;
+}
+.modal-footer {
+    height: 70px;
+    margin: 0;
+}
+.modal-footer .btn {
+    font-weight: bold;
+}
+.modal-footer .progress {
+    display: none;
+    height: 32px;
+    margin: 0;
+}
+.input-group-addon {
+    color: #fff;
+    background: #3276B1;
+}
+
+#myModal {
+    float: left;
+    background-color: whitesmoke;
+    text-align: center ;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+    padding: 10px;
+    margin: 20px;
+}
