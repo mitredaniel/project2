@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hibernate-configuration>
+	<session-factory>
+	
+	<property name="hibernate.dialect">
+			org.hibernate.dialect.PostgreSQLDialect
+		</property>
+		
+		<property name="hibernate.connection.driver_class">
+			org.postgresql.Driver
+		</property>
+		
+		<property name="hibernate.connection.url">
+			jdbc:postgresql://localhost:5432/postgres?
+		</property>
+		
+		<property name="hibernate.connection.username">
+			postgres
+		</property>
+		
+	
+		
+		<property name="hibernate.show_sql">true</property>
+	 
+		
+		<<mapping class= "com.revature.entities.P2_Ticket"/> 
+		<mapping class= "com.revature.entities.P2Payment"/>
+		<mapping class= "com.revature.entities.P2Unit"/>
+		<mapping class= "com.revature.entities.P2User"/> 
+		 
+		<!-- Level 2 Cache -->
+		<!-- <property name="hibernate.cache.use_second_level_cache">true</property>-->
+		<!-- Specify caching provider -->
+		<!-- <property name="hibernate.cache.region.factory_class"> -->
+		<!--	org.hibernate.cache.ehcache.EhCacheRegionFactory -->
+		<!-- </property>  -->
+		
+	</session-factory>
+</hibernate-configuration>
