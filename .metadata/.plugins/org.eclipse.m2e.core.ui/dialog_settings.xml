@@ -7,6 +7,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="PSBankApp"/>
 			<item value="PMSystem"/>
 		</list>
 		<list key="projectNameTemplate">

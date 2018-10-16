@@ -2,6 +2,8 @@ package com.revature.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
@@ -12,7 +14,8 @@ import javax.persistence.Table;
 public class P2User {
 	
 	@Id
-	@Column(name="userid")
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Column(name="userid", updatable = false, nullable = false)
 	private int userid;
 	
 	@Column(name="fname")

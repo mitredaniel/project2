@@ -1,16 +1,14 @@
 package com.revature.dao;
 
 
-import java.util.logging.Logger;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.slf4j.LoggerFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Repository;
 
 import com.revature.entities.P2User;
 import com.revature.interfaces.I_UserDAO;
-import com.revature.utilities.HibernateUtilities;
 
 import antlr.collections.List;
 
@@ -21,13 +19,27 @@ public class UserDaoImp implements I_UserDAO{
 		
 		
 		
-		public void addUser(P2User u) {
-			SessionFactory session = (SessionFactory)HibernateUtilities.getSession();
-		 
-			Session sadduser = session.openSession();
-			sadduser.persist(u);
-						
-			//logger.info("User saved successfully, User Details =" + u);	
+		public void addUser(P2User user) {
+			
+			Configuration c = new Configuration();
+			c.configure("hibernate.cfg.xml");
+			SessionFactory sf = c.buildSessionFactory();
+			Session s = sf.openSession();
+			Transaction tx = s.beginTransaction();
+			
+			try
+			{
+				s.save(user);
+				s.flush();
+				tx.commit();
+				
+			} catch (Exception e)
+			
+			{
+				tx.rollback();
+			}
+			
+			
 		}
 
 		

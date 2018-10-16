@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-mapping>
+<class name = "P2User" table ="p2_user">
+<id name ="userid" column ="userid" type="integer">
+<!-- <generator class="assigned"></generator> -->
+</id>
+<property name ="fname" column="fname" type="string"/>
+<property name ="lname" column="lname" type="string"/>
+<property name ="login" column="login" type="string"/>
+<property name ="password" column="password" type="string"/>
+<property name ="unit" column="unit" type="integer"/>
+</class>
+</hibernate-mapping>

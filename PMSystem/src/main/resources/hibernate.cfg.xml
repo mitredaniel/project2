@@ -1,25 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
 	<session-factory>
 	
 	<property name="hibernate.dialect">
 			org.hibernate.dialect.PostgreSQLDialect
 		</property>
-		<property name="jboss.as.jpa.providerModule" value="org.hibernate:3" />
 		
 		<property name="hibernate.connection.driver_class">
 			org.postgresql.Driver
 		</property>
 		
+		<property name="hibernate.show_sql">true</property>
+		
+		<!-- <property name="jboss.as.jpa.providerModule" value="org.hibernate:3" /> -->
+		
 		<property name="hibernate.connection.url">
 			jdbc:postgresql://localhost:5432/postgres?
 		</property>
+		 
+		<property name="hibernate.connection.username">
+			postgres
+		</property>
 		
-		<property name="hibernate.connection.username">postgres</property>	
-		
-		<property name="hibernate.show_sql">true</property>
 	 
-		
+		<!-- <mapping resource="User.hbm.xml"></mapping> -->
 		<mapping class= "com.revature.entities.P2_Ticket"/> 
 		<mapping class= "com.revature.entities.P2Payment"/>
 		<mapping class= "com.revature.entities.P2Unit"/>
