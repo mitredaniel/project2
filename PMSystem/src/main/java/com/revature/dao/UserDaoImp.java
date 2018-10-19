@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -13,8 +14,14 @@ import com.revature.interfaces.I_UserDAO;
 import antlr.collections.List;
 
 @Repository
-public class UserDaoImp implements I_UserDAO{
-
+public class UserDaoImp implements I_UserDAO  {
+	
+/*	
+	private Session session;
+	public UserDaoImp () {
+		session = (Session) HibernateUtilities.getSessionFactory();
+	}
+*/
 		//private static final org.slf4j.Logger logger = LoggerFactory.getLogger(UserDaoImp.class);
 		
 		
@@ -29,6 +36,7 @@ public class UserDaoImp implements I_UserDAO{
 			
 			try
 			{
+				
 				s.save(user);
 				s.flush();
 				tx.commit();
@@ -49,11 +57,46 @@ public class UserDaoImp implements I_UserDAO{
 		}
 
 		public P2User getUserById(int id) {
-			//Session session = this.sessionFactory.getCurrentSession();
-		//	P2User u = (P2User)session.load(P2User.class, new Integer(id));
-		//	logger.info("User loades successfully, User details = "+ u);
-			return null ;
+			
+			
+			Configuration c = new Configuration();
+			c.configure("hibernate.cfg.xml");
+			SessionFactory sf = c.buildSessionFactory();
+			Session s = sf.openSession();
+			Transaction tx = s.beginTransaction();
+			
+			
+			P2User u = null;
+			u = s.get(P2User.class, id);
+			
+			return u ;
 		}
+		
+		public P2User verifyDao(String login, String password) {
+			
+			Configuration c = new Configuration();
+			c.configure("hibernate.cfg.xml");
+			SessionFactory sf = c.buildSessionFactory();
+			Session s = sf.openSession();
+			Transaction tx = s.beginTransaction();
+			
+			P2User u = null;
+			
+			/*Query query = s.createSQLQuery("select * from p2_user where login = '" + login + "';");
+			u = (P2User) query.getResultList().get(0);*/
+			
+			
+			SQLQuery query = s.createSQLQuery("select * from p2_user where login = '" + login + "';");
+			query.addEntity(P2User.class);
+			u = (P2User) query.getResultList().get(0);
+			
+			if (u.getPassword().equals(password)){
+				return u;
+			}
+					return null ;
+		}
+		
+		
 		
 		
 }

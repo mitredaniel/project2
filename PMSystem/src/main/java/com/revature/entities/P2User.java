@@ -47,6 +47,7 @@ public class P2User {
 	//----------------------------------------
 	
 	@Override
+	
 	public String toString() {
 		return "P2User [userid=" + userid + ", fname=" + fname + ", lname=" + lname + ", login=" + login + ", password="
 				+ password + ", role=" + role + "]";
@@ -58,6 +59,19 @@ public class P2User {
 		super();
 	}
 
+	
+	
+
+	public P2User(int userid, String fname, String lname, String login, String password, String role, P2Unit unit) {
+		super();
+		this.userid = userid;
+		this.fname = fname;
+		this.lname = lname;
+		this.login = login;
+		this.password = password;
+		this.role = role;
+		this.unit = unit;
+	}
 
 	public int getUserid() {
 		return userid;

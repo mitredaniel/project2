@@ -3,11 +3,17 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.revature.entities.P2User;
 
 
 
@@ -30,11 +36,14 @@ public class HomeController {
 		return "home";
 	}
 
+	
 	@RequestMapping(value = "/user", method = RequestMethod.POST)
 	public String user(@Validated User user, Model model) {
 		System.out.println("User Page Requested");
 		model.addAttribute("userName", user.getUserName());
 		return "user";
 	}
+	
+	
 }
 

@@ -17,6 +17,14 @@ public class UserServiceImp implements I_UserService {
 	@Autowired
 	private UserDaoImp uDao;
 	
+	
+	public P2User verifyUser(String login, String password) {
+		
+		P2User u = uDao.verifyDao(login, password);
+		return u;
+	}
+	
+	
 	public void setUserDao(UserDaoImp uDao) {
 		this.uDao = uDao;
 	}
@@ -33,8 +41,11 @@ public class UserServiceImp implements I_UserService {
 		
 	}
 
-	@Transactional
+	//@Transactional
 	public P2User getUserById(int id) {
+		
+		
+		
 		return this.uDao.getUserById(id);
 	}
 

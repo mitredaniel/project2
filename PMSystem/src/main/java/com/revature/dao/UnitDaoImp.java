@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Query;
@@ -9,12 +10,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.springframework.stereotype.Repository;
 
 import com.revature.entities.P2Unit;
 import com.revature.interfaces.I_UnitDAO;
-
+@Repository
 public class UnitDaoImp implements I_UnitDAO {
 
+	
 	public void rentUnit(int userid, Date dstart, Date davailable, int occupied, int unitid) {
 	 
 		Configuration c = new Configuration();
@@ -45,7 +48,7 @@ public class UnitDaoImp implements I_UnitDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<P2Unit> occupiedUnit() {
-		Configuration c = new Configuration();
+	/*	Configuration c = new Configuration();
 		c.configure("hibernate.cfg.xml");
 		SessionFactory sf = c.buildSessionFactory();
 		Session s = sf.openSession();
@@ -57,7 +60,21 @@ public class UnitDaoImp implements I_UnitDAO {
 		for (P2Unit x: result) {
 			System.out.println(x);
 		}
-		return result;
+		*/
+		
+		
+		P2Unit u1 = new P2Unit();
+		u1.setOccupied(1);
+		
+		P2Unit u2 = new P2Unit();
+		u2.setOccupied(1);
+		
+		List<P2Unit> myList = new ArrayList();
+		myList.add(u1);
+		myList.add(u2);
+		
+		return myList;
+		
 		}
 
 	
