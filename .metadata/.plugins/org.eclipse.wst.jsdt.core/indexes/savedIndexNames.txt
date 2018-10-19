@@ -1,5 +1,0 @@
-INDEX VERSION 1.4+C:\Users\Daniel\Desktop\project2copy\Revature_Project2\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-2798894055.index
-294056352.index
-61895091.index
-611982333.index
