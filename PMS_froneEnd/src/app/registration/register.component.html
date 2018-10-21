@@ -1,0 +1,255 @@
+<h2 align="center">TENANCY APPLICATION</h2>
+<div class="container">    
+  <div class="row">
+        <form [formGroup]= "registerForm" (ngSubmit)= "onSubmit">
+              <fieldset>
+                  <legend>Personal Information</legend>
+                <div class ="form-group">
+                  <div class="row justify-content-center">
+                      <div class="col-sm-3">
+                          <label for="firstname">First Name</label>
+                          <input type="text" formControlName="firstName" class="form-control" placeholder="John">
+                      </div>
+                      <div class=" col-sm-3">
+                          <label for="lastname">Last Name</label>
+                          <input type="text" formControlName="lastName"class="form-control" placeholder="Doe">
+                      </div>
+                      <div class=" col-sm-2">
+                          <label for="birthday">Birth Date</label>
+                          <input type="date" formControlName= "bDay"class="form-control" >
+                      </div>
+                      <div class=" col-sm-2">
+                          <label for="inputPosition">SSN</label>
+                          <input type="text" formControlName= "social" class="form-control">
+                      </div>
+                      <div class=" col-sm-2">
+                          <label for="dLNumber">DL Number</label>
+                          <input type="text" formControlName="dLNumber" class="form-control">
+                      </div>
+                  </div>
+                </div>
+                  <div class="row justify-content-center">
+                      <div class="col-sm-4">
+                          <label for="cAddress">Current Address</label>
+                          <input type="text" formControlName="cAddress" class="form-control" placeholder="1234 Main St">
+                      </div>
+                      <div class="col-sm-2">
+                          <label for="pApt">Apartment #</label>
+                          <input type="text" formControlName="cApt" class="form-control" placeholder="Apartment, studio, or floor">
+                      </div>
+                      <div class="col-sm-2">
+                          <label for="cCity">City</label>
+                          <input type="text" formControlName="cCity" class="form-control">
+                      </div>
+                      <div class="col-sm-2">
+                          <label for="cState">State</label>
+                          <select id="inputState" formControlName="cState" class="form-control">
+                          <option selected>Choose</option>
+                          <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                          <option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                          <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option>
+                          <option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option>
+                          <option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option>
+                          <option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option>
+                          <option>WV</option><option>WI</option><option>WY</option>
+                          </select>
+                      </div>
+                      <div class="col-sm-2">
+                          <label for="cZip">Zip</label>
+                          <input type="text" formControlName="cZipCode" class="form-control">
+                      </div>
+                  </div>
+                  <div class="row justify-content-center">
+                      <div class="col-sm-4">
+                          <label for="pAddress">Previous Address</label>
+                          <input type="text" formControlName="pAddress" class="form-control" placeholder="1234 Main St">
+                      </div>
+                      <div class="col-sm-2">
+                          <label for="pAptNumber">Apartment #</label>
+                          <input type="text" formControlName="pApt" class="form-control" placeholder="Apartment, studio, or floor">
+                      </div>
+                      <div class="col-sm-2">
+                          <label for="pCity">City</label>
+                          <input type="text" formControlName="pCity" class="form-control">
+                      </div>
+                      <div class="col-sm-2">
+                          <label for="pState">State</label>
+                          <select id="inputState" formControlName="pState" class="form-control">
+                          <option selected>Choose</option>
+                          <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                          <option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                          <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option>
+                          <option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option>
+                          <option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option>
+                          <option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option>
+                          <option>WV</option><option>WI</option><option>WY</option>
+                          </select>
+                      </div>
+                      <div class="col-sm-2">
+                          <label for="pZip">Zip Code</label>
+                          <input type="text" formControlName="pZipCode" class="form-control">
+                      </div>
+                  </div>
+                  
+                  <div class="row justify-content-center">
+                      <div class="col-sm-2">
+                          <label for="hPhone">Home Phone</label>
+                          <input type="tel" formControlName="hPhone" class="form-control" placeholder ="8505551212">
+                      </div>
+                      <div class="col-sm-2">
+                          <label for="cPhone">Cell Phone</label>
+                          <input type="tel" formControlName="cPhone" class="form-control">
+                      </div>
+                      <div class="col-sm-3">
+                          <label for="occupant1">Additonal Occupant</label>
+                          <input type="text" formControlName="occupant1" class="form-control">
+                      </div>
+                      <div class="col-sm-3">
+                        <label for="occupant2">Additonal Occupant</label>
+                        <input type="text" formControlName="occupant2" class="form-control">
+                    </div>
+                    <div class="col-sm-2">
+                        <label for="unit">Unit Applying For</label>
+                        <input type="text" formControlName="unit" class="form-control">
+                    </div>
+                  </div>
+              </fieldset>
+              
+              <hr>
+              
+              <fieldset>
+                  <legend>Employment Information</legend>
+                  <div class="row justify-content-center">
+                        <div class="col-sm-4">
+                            <label for="cEmplAddress">Employer Address</label>
+                            <input type="text" formControlName="cEAddress" class="form-control" placeholder="1234 Main St">
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="cECity">City</label>
+                            <input type="text" formControlName="cECity" class="form-control">
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="cEState">State</label>
+                            <select id="inputState" formControlName="cEState" class="form-control">
+                            <option selected>Choose</option>
+                            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                            <option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                            <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option>
+                            <option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option>
+                            <option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option>
+                            <option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option>
+                            <option>WV</option><option>WI</option><option>WY</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="cEZip">Zip Code</label>
+                            <input type="text" formControlName="cEZipCode" class="form-control">
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="ePhone">Current Employer Phone</label>
+                            <input type="text" formControlName="ePhone" class="form-control">
+                        </div>
+                  </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-sm-4">
+                            <label for="pEmplAddress">Previous Employer Address</label>
+                            <input type="text" formControlName="pEAddress" class="form-control" placeholder="1234 Main St">
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="pECity">City</label>
+                            <input type="text" formControlName="pECity" class="form-control">
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="pEState">State</label>
+                            <select id="inputState" formControlName="pEState" class="form-control">
+                            <option selected>Choose</option>
+                            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option>
+                            <option>DC</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option>
+                            <option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option>
+                            <option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option>
+                            <option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option>
+                            <option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option>
+                            <option>WV</option><option>WI</option><option>WY</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="pEZip">Zip Code</label>
+                            <input type="text" formControlName="pEZipCode" class="form-control">
+                        </div>
+                        <div class="col-sm-2">
+                            <label for="pEPhone">Employer Phone</label>
+                            <input type="text" formControlName="pEPhone" class="form-control">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                       </div>
+              </fieldset>
+
+              <hr>
+              
+              <fieldset>
+                  <legend>References</legend>
+                  <div class="row justify-content-center">
+                        <div class="col-sm-3">
+                            <label for="refFName1">First Name</label>
+                            <input type="text" formControlName="refFName1" class="form-control" placeholder="John">
+                        </div>
+                        <div class=" col-sm-3">
+                            <label for="refLName1">Last Name</label>
+                            <input type="text" formControlName="refLName1"class="form-control" placeholder="Doe">
+                        </div>
+                        <div class="col-sm-3">
+                                <label for="relation1">Relationship</label>
+                                <input type="text" formControlName="relation1" class="form-control" placeholder="Supervisor">
+                        </div>
+                        <div class=" col-sm-2">
+                            <label for="refPhone1">Phone</label>
+                            <input type="tel" formControlName="refPhone1"class="form-control">
+                        </div>
+                 </div>
+                 <div class="row justify-content-center">
+                        <div class="col-sm-3">
+                            <label for="refFName2">First Name</label>
+                            <input type="text" formControlName="refFName2" class="form-control" placeholder="John">
+                        </div>
+                        <div class=" col-sm-3">
+                            <label for="refLName2">Last Name</label>
+                            <input type="text" formControlName="refLName2"class="form-control" placeholder="Doe">
+                        </div>
+                        <div class="col-sm-3">
+                                <label for="relation2">Relationship</label>
+                                <input type="text" formControlName="relation2" class="form-control" placeholder="Landlord">
+                        </div>
+                        <div class=" col-sm-2">
+                            <label for="refPhone2">Phone</label>
+                            <input type="tel" formControlName="refPhone2"class="form-control">
+                        </div>
+                 </div>
+              </fieldset>
+
+              <fieldset>
+            <hr>
+                  <h6 align= "center">Enter your email address and a password to check your application status</h6>
+              <div class="row justify-content-center">
+                    <div class="col-sm-4">
+                        <label  for="email">Email Address</label> 
+                        <input type="email" class="form-control" formControlName ="email">
+                    </div>
+                    <div class="col-sm-4">
+                      <label  for="password">Password</label> 
+                      <input type="password" class="form-control" formControlName ="passWord">
+                    </div>
+              </div>
+              <br>
+              <div class="row justify-content-center">
+                  <div class="col-sm-3">
+                      <button type="submit" class="btn btn-primary">Submit Application</button>
+                  </div>
+              </div>
+            </fieldset>
+          </form>
+      </div>
+          
+</div>

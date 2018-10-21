@@ -1,0 +1,26 @@
+<h2 align= "center">Login</h2>
+
+<form [formGroup]= "loginForm" (ngSubmit)= "onSubmit()"> 
+  <div class= "form-group">
+      <label for= "username">Username</label>
+      <input type= "text" formControlName= "userName" class= "form-control" [ngClass]= "{ 'is-invalid': submitted && user.userName.errors}" placeholder= "Email address" />
+      <div *ngIf="submitted && user.userName.errors" class= "invalid-feedback">
+        <div *ngIf= "user.userName.errors.required">Username Is Required</div>
+      </div>
+  </div>
+  <div class="form-group">
+      <label for= "password">Password</label>
+      <input type= "password" formControlName= "passWord" class= "form-control" [ngClass]= "{ 'is-invalid': submitted && user.passWord.errors}"/>
+      <div *ngIf="submitted && user.passWord.errors" class="invalid-feedback">
+          <div *ngIf= "user.passWord.errors.required">Password Is Required</div>
+      </div>
+  </div>
+  <div class= "form-group">
+     <input type="submit">
+     <a [routerLink]= "['/register']" class = "btn btn-link">Register</a>
+  </div>
+
+
+
+
+</form>
