@@ -21,7 +21,7 @@ public class UnitController {
 	@Autowired
 	UnitServiceImp unitservice;
 	@CrossOrigin(allowedHeaders="*",origins = "http://localhost:4200")
-	@PostMapping(value="/unit")
+	@GetMapping(value="/unit")
 	public List getUnits() {
 		return unitservice.availableUnit();
 		
